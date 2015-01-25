@@ -57,11 +57,11 @@ class MuseServer(ServerThread):
         print "%s %f %f %f %f" % (path, l_ear, l_forehead, r_forehead, r_ear)
         time_data.append(time.time()-abstart)
         with open('data.csv', 'wb') as csvfile:
-            spamwriter = csv.writer(csvfile, delimiter=' ')
-            #spamwriter.writerow(state_data)
-            spamwriter.writerow(alpha_data)
-            spamwriter.writerow(time_data)
-            spamwriter.writerow([alphabaseline])
+            writer = csv.writer(csvfile, delimiter=' ')
+            #writer.writerow(state_data)
+            writer.writerow(alpha_data)
+            writer.writerow(time_data)
+            writer.writerow([alphabaseline])
         print "Sampling rate: %f" % (i/split)
         i += 1
         #with open('data.csv', 'wb') as csvfile:
